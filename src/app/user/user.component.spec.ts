@@ -7,6 +7,7 @@ import {UserComponent} from './user.component';
 import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
 import {User} from "../model/user";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('UserComponent', () => {
     let component: UserComponent;
@@ -63,17 +64,19 @@ describe('UserComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            imports : [
+                RouterTestingModule
+            ],
             declarations: [UserComponent],
             providers: [
                 {
                     provide: ActivatedRoute,
                     useValue: {
-                        'data': Observable.from(users as Array<User>)
+                        data: Observable.of({users: users})
                     }
                 }
             ]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -87,8 +90,8 @@ describe('UserComponent', () => {
     });
 
     it('users should be resolved', () => {
-        //TODO find a way to test resolve
-        //expect(component.users).toBeTruthy();
-        //expect(component.users.length).toEqual(2);
+        expect(component.users).toBeTruthy();
+        expect(component.users.length).toEqual(2);
+        expect(component.users).toEqual(users);
     });
 });
