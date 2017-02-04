@@ -91,4 +91,42 @@ describe('UserService', () => {
         expect(users).toEqual(body as Array<User>);
       });
     }));
+
+  it('should be successful when getting all users', inject([UserService, MockBackend],
+      (service: UserService, backend: MockBackend) => {
+        let body: any = {
+          "id": 1,
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+              "lat": "-37.3159",
+              "lng": "81.1496"
+            }
+          },
+          "phone": "1-770-736-8031 x56442",
+          "website": "hildegard.org",
+          "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+          }
+        };
+        let baseResponse = new Response(new ResponseOptions({ body: body}));
+        backend.connections.subscribe((c: MockConnection) => {
+          c.mockRespond(baseResponse);
+          expect(c.request.method).toBe(RequestMethod.Get);
+          expect(c.request.url).toBe(UserService.USERS_ENDPOINT  + "/" + body.id);
+        });
+
+        service.getUserById(body.id).subscribe((user: User) => {
+          expect(user).toBeTruthy();
+          expect(user).toEqual(body as User);
+        });
+      }));
 });

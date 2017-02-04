@@ -8,12 +8,16 @@ import 'rxjs/Rx';
 @Injectable()
 export class UserService {
 
-  public static USERS_ENDPOINT = environment.backendURL + "/users";
+  public static USERS_ENDPOINT = environment.backendURL + "users";
 
   constructor(private http: Http) { }
 
   get users(): Observable<Array<User>> {
     return this.http.get(UserService.USERS_ENDPOINT).map((res: Response) => res.json() as Array<User>);
+  }
+
+  getUserById(id: number): Observable<User> {
+    return this.http.get(`${UserService.USERS_ENDPOINT}/${id}`).map((res: Response) => res.json() as User);
   }
 
 }
