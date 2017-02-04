@@ -8,15 +8,19 @@ import {UserService} from "./service/user.service";
 import { UserComponent } from './user/user.component';
 import {Routes, RouterModule} from "@angular/router";
 import {UsersResolver} from "./user/users-resolver";
+import { UserDetailsComponent } from './user-details/user-details.component';
+import {UserResolver} from "./user-details/user-resolver";
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent , resolve : { users: UsersResolver } },
   { path: 'user', component: UserComponent, resolve : { users: UsersResolver } },
+  { path: 'user/:id', component: UserDetailsComponent, resolve : { user: UserResolver } },
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     UserService,
-    UsersResolver
+    UsersResolver,
+    UserResolver
   ],
   bootstrap: [AppComponent]
 })
