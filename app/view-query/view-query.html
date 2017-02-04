@@ -1,0 +1,14 @@
+<div>
+	<div class="panel panel-default" ng-repeat="article in vm.articles">
+		<div class="panel-heading">
+			<h2>{{ article.title }}</h2> 
+		</div>
+		<div class="panel-body">
+			<p> {{ article.byline }} </p>
+			{{ article.abstract }}
+		</div>
+		<div class="panel-footer">
+			<a ng-href="{{ article.url }}">Read Full Article</a>
+		</div>
+	</div>
+</div>
