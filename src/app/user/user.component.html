@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let user of users">
+        <div class="thumbnail text-center" style="align-content: center">
+            <img [alt]="user.name" src="https://placehold.it/150x150" style="height: 150px;">
+            <div class="caption text-center">
+                <h6 class="col-12" style="min-height: 2em">
+                    <a [routerLink]="'/user/' + user.id">{{user.name}}</a>
+                </h6>
+                <p class="col-12">
+                    <small>{{truncate(user.company.name)}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
