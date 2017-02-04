@@ -1,0 +1,19 @@
+<h1>States</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <td width="20%">Region Code</td>
+        <td width="80%">Region Name</td>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <tr ng-repeat="state in states.states">
+        <td><a ng-href="#!/detail/{{state.region_code}}">{{state.region_code}}</a></td>
+        <td>{{state.region_name}}</td>
+    </tr>
+    <tr>
+
+    </tbody>
+</table>
