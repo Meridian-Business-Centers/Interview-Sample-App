@@ -1,4 +1,4 @@
-# interview-sample
+# Interview-Sample-App
 
 > sample interview app for Meridian Business Centers
 
