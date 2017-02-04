@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "../model/user";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  users: Array<User>;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe((data: any) => {
+      this.users = data.users;
+    });
   }
 
 }
