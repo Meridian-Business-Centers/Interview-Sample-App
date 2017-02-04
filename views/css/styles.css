@@ -1,0 +1,72 @@
+/* Copyright (c) Samuel Kilada 2017. */
+
+/* Main Styles */
+body {
+    padding: 10px;
+}
+
+.error {
+    margin-top: 20px;
+    height: 30px;;
+    color: red;
+}
+
+.zipcode {
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hover and active states */
+.zipcode:hover {
+    -moz-animation: brighten .5s ease-out;
+    -moz-animation-iteration-count: 1;
+    -webkit-animation: brighten .5s ease-out;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation: brighten .5s ease-out;
+    -ms-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.zipcode:active {
+    -moz-animation: darken .1s ease-out;
+    -moz-animation-iteration-count: 1;
+    -webkit-animation: darken .1s ease-out;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation: darken .1s ease-out;
+    -ms-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* Animations */
+@-webkit-keyframes brighten {
+    0% { background-color: white; }
+    100% { background-color: lightsteelblue; }
+}
+@-moz-keyframes brighten {
+    0% { background-color: white; }
+    100% { background-color: lightsteelblue; }
+}
+@-ms-keyframes brighten {
+    0% { background-color: white; }
+    100% { background-color: lightsteelblue; }
+}
+
+@-webkit-keyframes darken {
+    0% { background-color: lightsteelblue; }
+    100% { background-color: darkgray; }
+}
+@-moz-keyframes darken {
+    0% { background-color: lightsteelblue; }
+    100% { background-color: darkgray; }
+}
+@-ms-keyframes darken {
+    0% { background-color: lightsteelblue; }
+    100% { background-color: darkgray; }
+}
