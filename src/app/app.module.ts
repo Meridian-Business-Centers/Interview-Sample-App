@@ -5,15 +5,23 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {UserService} from "./service/user.service";
+import { UserComponent } from './user/user.component';
+import {Routes, RouterModule} from "@angular/router";
 
+const appRoutes: Routes = [
+  { path: '', component: UserComponent },
+  { path: 'user', component: UserComponent },
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     UserService
