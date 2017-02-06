@@ -27,11 +27,7 @@
         };
 
         $scope.goToDetail = function (zip) {
-             weatherService.getLocationByZipcode(zip).then(function (response) {
-                console.log(response.data);
-            }, function (error) {
-                alert(error.statusText);
-            });
+            $location.path('/detail/' + zip);
         };
 
 

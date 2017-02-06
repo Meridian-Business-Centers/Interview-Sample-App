@@ -7,7 +7,7 @@
             templateUrl:'Views/home.html'
         });
 
-        $routeProvider.when('/detail',{
+        $routeProvider.when('/detail/:zip',{
             controller:'detailController',
             templateUrl:'Views/detail.html'
         });
