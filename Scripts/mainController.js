@@ -26,6 +26,13 @@
             });
         };
 
+        $scope.goToDetail = function (zip) {
+             weatherService.getLocationByZipcode(zip).then(function (response) {
+                console.log(response.data);
+            }, function (error) {
+                alert(error.statusText);
+            });
+        };
 
 
         function generateElement(value, id, onclickEvent) {
@@ -34,7 +41,7 @@
             /*return '<input type="button" data-id=' + id + ' value="' + value + '" onclick="' + onclickEvent + '()" class="btn btn-default" />';*/
         };
 
-       
+
 
         init();
     });

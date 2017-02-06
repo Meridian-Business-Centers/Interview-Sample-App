@@ -2,7 +2,7 @@
     var app = angular.module('app');
 
     app.factory('weatherService', function ($http) {
-        var apiBase = 'https://www.zipcodeapi.com/rest/UK6SbwIXYns5t7NRx042u7bIXop8E0JyLQrWmaUlxmq0udS1dW4I4fq1EQaiQTRC/info.json/';
+        var apiBase = 'https://www.zipcodeapi.com/rest/js-lULtvrZBnT2VNJU2iUv21g6kN4ppzqiUk3oQvnrThuP5dK7wECzFSF0GJq6iQodb/info.json/';
         var localApi = 'http://localhost:8080/';
         return {
             getLocationByZipcode: function (zipCode) {
