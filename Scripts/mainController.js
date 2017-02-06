@@ -8,17 +8,34 @@
 
         function generateZipButtons(zipArray) {
             for (var i = 0; i < zipArray.length; i++) {
-                var button = $('<input').attr({
-                    type: "button",
-                    id: "zip-btn" + i,
-                    value: zipArray[i]
-                });
+                /* var button = $('<input/>').attr({
+                     type: "button",
+                     id: "zip-btn" + i,
+                     value: zipArray[i]
+                 });*/
+                var button = generateElement(zipArray[i], "zip-btn" + i, "btnClick");
                 $("div.container").append(button);
             }
         };
 
-        function generateElement(value, id) {
-            return '<input type="button" data-id=' + id + ' value="' + value + '" onclick="' + onclickEvent + '()" class="btn btn-default" />';
+        function init() {
+            weatherService.getZipcodesOfDallas().then(function (response) {
+                $scope.zipcodes = response.data.zip_codes;
+            }, function (error) {
+                alert(error.statusText);
+            });
         };
+
+
+
+        function generateElement(value, id, onclickEvent) {
+            return '<input type="button" data-id=' + id + ' value="' + value + '" class="zip-btn" />';
+
+            /*return '<input type="button" data-id=' + id + ' value="' + value + '" onclick="' + onclickEvent + '()" class="btn btn-default" />';*/
+        };
+
+       
+
+        init();
     });
 }());

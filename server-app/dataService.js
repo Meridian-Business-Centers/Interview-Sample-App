@@ -12,6 +12,7 @@ function getAllZipcodes(req, res, next) {
 };
 
 var server = restify.createServer();
+server.use(restify.CORS({ credentials: true }));
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 server.get('/zip', getAllZipcodes);
