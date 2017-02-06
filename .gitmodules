@@ -1,0 +1,9 @@
+[submodule "freelance-camp-fe"]
+	path = freelance-camp-fe
+	url = https://github.com/ldco2016/freelance-camp-fe
+[submodule "freelance_camp_documents"]
+	path = freelance_camp_documents
+	url = https://github.com/ldco2016/freelance_camp_documents
+[submodule "freelance_camp_proposal"]
+	path = freelance_camp_proposal
+	url = https://github.com/ldco2016/freelance_camp_proposal
