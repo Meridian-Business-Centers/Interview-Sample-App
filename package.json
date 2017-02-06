@@ -1,0 +1,22 @@
+{
+  "name": "interview-sample-app",
+  "version": "1.0.0",
+  "description": "Not Yet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meridian-Business-Centers/Interview-Sample-App.git"
+  },
+  "author": "Ahmet Gökdayı",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meridian-Business-Centers/Interview-Sample-App/issues"
+  },
+  "homepage": "https://github.com/Meridian-Business-Centers/Interview-Sample-App#readme",
+  "dependencies": {
+    "file-system": "^2.2.2"
+  }
+}
