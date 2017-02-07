@@ -5,10 +5,10 @@
 > This is an AngularJS application, it also contains some server-side **node.js** stuff to serve zipcode data.
 
 - Angular app is as :
-    - Scripts/app.js defines the angular app
-    - mainController and detailController are the controllers of the 2 routes defined in app.js
-    - weatherService stands as an ng factory, contains functions which makes http requests to get specific datas and also returns promises
-    - Views/*.html files are the 2 different partial pages used for 2 routes
+    - **Scripts/app.js** defines the angular app
+    - **mainController** and **detailController** are the controllers of the 2 routes defined in app.js
+    - **zipService** stands as an ng factory, contains functions which makes http requests to get specific datas and also returns promises
+    - **Views/*.html** files are the 2 different partial pages used for 2 routes
 
 - Server side is as :
     - **server-app** folder contains the server side stuff
