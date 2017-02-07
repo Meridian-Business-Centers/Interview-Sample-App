@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('app');
 
-    app.factory('weatherService', function ($http) {
+    app.factory('zipService', function ($http) {
         var apiBase = 'https://www.zipcodeapi.com/rest/js-lULtvrZBnT2VNJU2iUv21g6kN4ppzqiUk3oQvnrThuP5dK7wECzFSF0GJq6iQodb/info.json/';
         var localApi = 'http://localhost:8080/';
         return {
