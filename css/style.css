@@ -1,12 +1,16 @@
 body {
-  max-width:600px;
-  margin:0 auto;
   font-family:Roboto, sans-serif;
+}
+.left-panel {
+  background:#ccc;
+}
+.right-panel {
+  background:#eee;
 }
 ul {
   background:#eee;
-  margin:10px 5px;
-  padding:10px 5px;
+  margin:10px 0px;
+  padding:10px 10px;
 }
 li {
   display:inline-block;
@@ -14,5 +18,8 @@ li {
   font-size:10px;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin:4px;
+  margin:10px 0px;
+}
+h5 {
+  margin-bottom:60px;
 }
