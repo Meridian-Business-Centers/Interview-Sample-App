@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js Simple Routing Example</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-resource/dist/vue-resource.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<div id="app" class="container-fluid">
+  <div class="row">
+  <div class="col-sm-8 left-panel">
+  <h3>Dallas Zip Codes</h3>
+    <router-link to="/">Home</router-link>
+  <ul>
+  <li v-for="zip in zip_codes">
+    <a :href="zip | addDetailToUrl">{{ zip }}</a></li>
+  </ul>
+    </div>
+  <div class="col-sm-4 right-panel">
+    
+  <h5>Weather</h5>
+  <h6>{{weather_main}}</h6>
+    <h6>{{weather_description}}</h6>
+    <img :src="weather_icon" />
+    </li>
+
+  </p>
+  <router-view></router-view>
+</div>
+</div>
+</div>
+  
+    <script src="js/index.js"></script>
+
+</body>
+</html>
