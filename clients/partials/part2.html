@@ -1,0 +1,15 @@
+<div ng-controller="part2">
+
+<h2>Details for {{zip}}:</h2>
+<ul>
+	<li>Longitude: {{data.coord.lon}}</li>
+	<li>Latitude: {{data.coord.lat}}</li>
+	<li>Temperature: {{data.main.temp}}</li>
+	<li>Pressure: {{data.main.pressure}}</li>
+	<li>Humidity: {{data.main.humidity}}</li>
+	<li>Wind Speed: {{data.wind.speed}}</li>
+</ul>
+
+
+<button ng-click="goBack()">Back</button>
+</div>

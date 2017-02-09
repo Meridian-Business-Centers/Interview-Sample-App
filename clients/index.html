@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>test</title>
+	<script src="angular/angular.js"></script>
+	<script src="angular-route/angular-route.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script>
+		var app = angular.module('app', ['ngRoute']);
+		app.config(function ($routeProvider) {
+		 	$routeProvider
+			.when('/',{
+				templateUrl: 'partials/part1.html'
+			})
+			.when('/part2', {
+				templateUrl: 'partials/part2.html'
+			})
+			.otherwise({
+	          	redirectTo: '/'
+	        });
+		});
+		app.value('shared', {});
+		app.controller('part1', function ($scope, $http, $location, shared) {
+      		$scope.zips = ['75201', '75205', '75209', '75214', '75218', '75222', '75226', '75230'];
+
+      		$scope.showWeather = function(){
+      			shared.zip = this.zip;
+      			$location.url('/part2');
+      		};
+    	});
+    	app.controller('part2', function ($scope, $http, $location, shared) {
+    			$http({
+				  	method: 'GET',
+				  	url: 'http://api.openweathermap.org/data/2.5/weather?zip=' + shared.zip + ',us&units=imperial&appid=cb60577f932abfb85978850199b0ec93'
+				}).then(function successCallback(response) {
+					$scope.zip = shared.zip;
+				    $scope.data = response.data;
+				});
+    		$scope.goBack = function(){
+      			$location.url('/');
+      		};
+    	});
+	</script>
+</head>
+<body class="container">
+	<div ng-view></div>
+</body>
+</html>
