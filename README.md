@@ -3,7 +3,7 @@
 Basic app that gets all the Star Wars films from `swapi.co` API and than displays the opening crawl text with some css modifications.
 
 ## Deployed
-https://swiki.herokuapp.com/
+http://swiki.herokuapp.com/
 
 ## Requirements
 `node` and `npm`
