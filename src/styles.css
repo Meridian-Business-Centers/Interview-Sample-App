@@ -1,0 +1,82 @@
+#bg {
+  background-image: url('1.jpg');
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left:0;
+  right: 0;
+  background-size: cover;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+h3 {
+  text-align: center;
+}
+#selectedTitle {
+   margin-left: auto;
+   margin-right: auto
+ }
+#details {
+  color: #ff6;
+}
+.navbar {
+  background-color: transparent;
+  border: 0px;
+}
+h2 {
+  position: absolute;
+  left: 45%;
+  color: #EEE8AA;
+}
+#app {
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+#films {
+  color: #EEE8AA;
+  text-align: center;
+}
+#fixer {
+  position: fixed;
+  bottom: -15%;
+  left: 50%;
+  border: dotted red 1px;
+}
+#titles
+{
+	position: absolute;
+	width: 18em;
+	height: 50em;
+	bottom: 0;
+	left: 50%;
+	margin-left: -9em;
+	font-size: 350%;
+	font-weight: bold;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+}
+#titles:after
+{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+}
+#titlecontent
+{
+	position: absolute;
+	top: 100%;
+	animation: scroll 100s linear 4s infinite;
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
