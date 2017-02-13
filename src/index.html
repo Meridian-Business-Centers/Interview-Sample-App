@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SWiki</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/2/2d/SW_logo_plantilla.png" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel='stylesheet' type='text/css' href='/src/styles.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- <div id="header">
+      <p>I am <i>Heather</i>, small evergreen shrub</p>
+    </div> -->
+  <div id="bg">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <h2>SWiki</h2>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div id="films">
+      <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4" v-for="todo in allFilms" v-on:click="showMore">{{ todo }}</div>
+      </div>
+      <div v-if="test" id="details">
+        <div id="selectedTitle">
+          <h3>{{ test.title }}</h3>
+        </div>
+        <div id="fixer">
+          <div id="titles">
+            <div id="titlecontent">
+              <p>{{ test.opening_crawl }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
+    <script type="text/javascript" src="src/app.js"></script>
+  </div>
+  </body>
+</html>
