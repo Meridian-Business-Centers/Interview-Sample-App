@@ -1,0 +1,6 @@
+<div class="row">
+    <h1 class="text-center"> Click any button below for detail of the zipcode </h1>
+    <div class="col-md-2" ng-repeat="z in zipcodes">
+        <input type="button" class="btn btn-default btn-block" value="{{z}}" ng-click="goToDetail(z)" />
+    </div>
+</div>
